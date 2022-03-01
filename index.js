@@ -18,12 +18,13 @@ global['write'] = {};
     global.API = (name, path = '/', query = {}, apikeyqueryname) => (name in global.APIs ? global.APIs[name] : name) + path + (query || apikeyqueryname ? '?' + new URLSearchParams(Object.entries({ ...query, ...(apikeyqueryname ? { [apikeyqueryname]: global.APIKeys[name in global.APIs ? global.APIs[name] : name] } : {}) })) : '')
      global.Ft = new Functions(); // Menghubungkan dari Function.js
       global.mediaType = require(Baileys).MessageType //Biar keren hehe
-       global.botuser = require('./src/config') //Menghubungkan Ke Connection string
-        global.Events = {}
-         global.baileys = Baileys //Hehe
-          global.db = new JsonDB(new Config("database", true, false, '/'));
-           global.Public = false
-            global.scrap = require("./Lib/scrape");
+       global.conn = new WAConnection(Baileys); //Wa Connect dari baileys
+        global.botuser = require('./src/config') //Menghubungkan Ke Connection string
+         global.Events = {}
+          global.baileys = Baileys //Hehe
+           global.db = new JsonDB(new Config("database", true, false, '/'));
+            global.Public = false
+             global.scrap = require("./Lib/scrape");
 //msgTyp
 global.text = mediaType.text
 global.image = mediaType.image
