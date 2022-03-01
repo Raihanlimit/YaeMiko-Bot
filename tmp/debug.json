@@ -172,7 +172,7 @@
    },
    "version": {
       "bot" : "1.0.0",
-      "baileys" : "3.5.2",
+      "baileys" : "3.5.3",
       "browserDescription" : "Yae Miko Bot"
    },
     "qrcode": "./src/session/qrcode-terminal.json"
