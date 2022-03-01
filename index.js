@@ -18,7 +18,7 @@ global['write'] = {};
     global.API = (name, path = '/', query = {}, apikeyqueryname) => (name in global.APIs ? global.APIs[name] : name) + path + (query || apikeyqueryname ? '?' + new URLSearchParams(Object.entries({ ...query, ...(apikeyqueryname ? { [apikeyqueryname]: global.APIKeys[name in global.APIs ? global.APIs[name] : name] } : {}) })) : '')
      global.Ft = new Functions(); // Menghubungkan dari Function.js
       global.mediaType = require(Baileys).MessageType //Biar keren hehe
-       global.conn = new WAConnection(simple); //Wa Connect dari baileys
+       global.conn = new WAConnection('./Lib/simple'); //Wa Connect dari baileys
         global.botuser = require('./src/config') //Menghubungkan Ke Connection string
          global.Events = {}
           global.baileys = Baileys //Hehe
